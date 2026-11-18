@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111116">
+<title>Приглашение для Яны</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Georgia,'Times New Roman',serif;color:#fff4eb;background:radial-gradient(ellipse at 50% 0%,#3c3030 0,#1b1719 45%,#09090c 100%);display:grid;place-items:center;padding:22px}
+.card{width:min(100%,520px);padding:30px 24px;border:1px solid #bda18a55;border-radius:26px;background:linear-gradient(160deg,#292326ee,#100e11f5);box-shadow:0 25px 80px #0009;text-align:center;overflow:hidden}
+.eyebrow{font:11px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#d8c0ae;margin:8px 0 20px}
+h1{font-size:clamp(40px,10vw,58px);font-weight:400;font-style:italic;margin:8px 0 20px}
+.city{width:100%;height:210px;object-fit:cover;object-position:center 55%;border-radius:14px;margin:0 0 15px;box-shadow:0 10px 30px #0008}
+p{font:16px/1.7 Arial,sans-serif;color:#eee1d9;margin:13px auto;max-width:400px}
+.question{font-size:25px;line-height:1.35;margin:27px 0 20px}
+.buttons{display:grid;gap:12px;margin:20px auto 0;max-width:360px}
+button{font:16px Arial,sans-serif;border-radius:999px;padding:16px 18px;cursor:pointer}
+.yes{border:1px solid #e4c5aa;background:#e8d2bf;color:#211719;font-weight:700}
+.also{border:1px solid #e8d9cc;background:transparent;color:#fff4eb}
+.response{display:none;margin:22px auto 0;padding:18px;border:1px solid #bda18a88;border-radius:16px;background:#ffffff0c;font:16px/1.6 Arial,sans-serif}
+.response.show{display:block}.footer{font:11px Arial,sans-serif;letter-spacing:.16em;color:#bba89b;margin-top:26px}
+@media(max-width:420px){.card{padding:25px 18px}.city{height:175px}p{font-size:15px}.question{font-size:23px}}
+</style></head>
+<body><main class="card">
+<div class="eyebrow">небольшое приглашение</div><h1>Яна</h1>
+<img class="city" src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85" alt="Ночной город">
+<p>Хочу пригласить тебя на прогулку вдвоём.</p>
+<p>Просто провести время вместе, поговорить, отвлечься от повседневных забот и немного отдохнуть.</p>
+<p>Без повода и лишней суеты. Просто прогулка, хороший разговор и приятная компания.</p>
+<p><em>Место — сюрприз.</em></p>
+<div class="question">Составишь мне компанию?</div>
+<div class="buttons">
+<button class="yes" onclick="answer('Пойду')">Пойду</button>
+<button class="also" onclick="answer('Давай, с удовольствием')">Давай, с удовольствием</button>
+</div>
+<div id="response" class="response" aria-live="polite"></div>
+<div class="footer">БУДУ РАД ПРОВЕСТИ ВРЕМЯ ВМЕСТЕ</div>
+</main>
+<script>
+function answer(choice){const box=document.getElementById('response');box.textContent=choice+'. Тогда договорились — место и время прогулки я предложу отдельно.';box.classList.add('show')}
+</script></body></html>
