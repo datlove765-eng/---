@@ -37,5 +37,23 @@ button{font:16px Arial,sans-serif;border-radius:999px;padding:16px 18px;cursor:p
 <div class="footer">БУДУ РАД ПРОВЕСТИ ВРЕМЯ ВМЕСТЕ</div>
 </main>
 <script>
-function answer(choice){const box=document.getElementById('response');box.textContent=choice+'. Тогда договорились — место и время прогулки я предложу отдельно.';box.classList.add('show')}
+  
+function answer(choice) {
+  const box = document.getElementById('response');
+
+  box.textContent = choice + '. Тогда договорились — место и время прогулки я предложу отдельно.';
+  box.classList.add('show');
+
+  fetch('https://script.google.com/macros/s/AKfycbwDYA4m94TeDJx3mXbxM7UD24xZHUmPv5LDCKh6c0ucJBW_T4kYVJw56fJ2KzTmxUaPhQ/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'text/plain;charset=utf-8'
+    },
+    body: JSON.stringify({
+      choice: choice
+    })
+  });
+}
+
 </script></body></html>
